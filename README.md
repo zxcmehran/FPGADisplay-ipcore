@@ -1,6 +1,6 @@
 # FPGA Display (IP Core)
 
-FPGA Display Handler IP Core lets you drive VGA Displays using a VGA DAC connected to a FPGA. It's mainly designed to run along a PowerPC embedded processor. It should be possible to run along MicroBlaze Cores but it's' not tested yet. 
+FPGA Display Handler IP Core lets you drive VGA Displays using a VGA DAC connected to a FPGA. It's mainly designed to run along a PowerPC embedded processor. It should be possible to run along MicroBlaze Cores but it's not tested yet. 
 
 You can also use it on a bare FPGA without any embedded processors with a limited functionality. It uses a generated RAM block as **VGA Display Memory** to store the pixel data to be displayed over the screen. All you have to do is to fill memory blocks by either implementing a logic on FPGA context or using a embedded processor.
 
