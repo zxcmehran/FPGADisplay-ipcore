@@ -1,0 +1,26 @@
+##############################################################################
+## FPGA Display Handler IP Core By Mehran Ahadi (http://mehran.ahadi.me)
+## This IP allows you to draw shapes and print texts on VGA screen.
+## Copyright (C) 2015-2016  Mehran Ahadi
+## This work is released under MIT License.
+##
+## Description:       Peripheral Analysis Order
+## Date:              Tue Aug 09 18:03:33 2016 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v2_00_a proc_common_pkg vhdl
+lib proc_common_v2_00_a or_muxcy vhdl
+lib proc_common_v2_00_a family_support vhdl
+lib proc_common_v2_00_a pselect_f vhdl
+lib proc_common_v2_00_a or_gate128 vhdl
+lib proc_common_v2_00_a ipif_pkg vhdl
+lib proc_common_v2_00_a counter_f vhdl
+lib plbv46_slave_single_v1_00_a plb_address_decoder vhdl
+lib display_handler_v1_00_a DisplayOut vhdl
+lib display_handler_v1_00_a DisplayMemoryDual vhdl
+lib display_handler_v1_00_a ClockMaker vhdl
+lib plbv46_slave_single_v1_00_a plb_slave_attachment vhdl
+lib display_handler_v1_00_a Main vhdl
+lib plbv46_slave_single_v1_00_a plbv46_slave_single vhdl
+lib display_handler_v1_00_a user_logic vhdl
+lib display_handler_v1_00_a display_handler vhdl

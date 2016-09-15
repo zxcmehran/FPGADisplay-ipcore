@@ -1,0 +1,13 @@
+##############################################################################
+## FPGA Display Handler IP Core By Mehran Ahadi (http://mehran.ahadi.me)
+## This IP allows you to draw shapes and print texts on VGA screen.
+## Copyright (C) 2015-2016  Mehran Ahadi
+## This work is released under MIT License.
+##
+## Description:       Black Box Definition
+## Date:              Tue Aug 09 18:03:33 2016 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+Files
+################################################################################
+DisplayMemoryDual.ngc
