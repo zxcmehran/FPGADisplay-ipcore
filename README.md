@@ -1,6 +1,6 @@
 # FPGA Display (IP Core)
 
-**Quick Access: This is the main IP Core repository. Check [FPGADisplay-driver](https://github.com/zxcmehran/FPGADisplay-driver) repository for driver files.**
+**Quick Access: This is the main IP Core repository. Check [FPGADisplay-driver](https://github.com/zxcmehran/FPGADisplay-driver) repository for driver files. You might also want to see [Persian Introduction | معرفی به زبان پارسی](https://mehran.ahadi.me/projects/bsc-project/fa/).**
 
 FPGA Display Handler IP Core lets you drive VGA Displays using a VGA DAC connected to a FPGA. It's mainly designed to run along a PowerPC embedded processor. It should be possible to run along MicroBlaze Cores but it's not tested yet. 
 
