@@ -4,7 +4,11 @@
 
 FPGA Display Handler IP Core lets you drive VGA Displays using a VGA DAC connected to a FPGA. It's mainly designed to run along a PowerPC embedded processor. It should be possible to run along MicroBlaze Cores but it's not tested yet. 
 
-You can also use it on a bare FPGA without any embedded processors with a limited functionality. Actually, it uses a generated RAM block as **VGA Display Memory** to store the pixel data to be displayed over the screen. All you have to do is to fill memory blocks by either implementing a logic on VHDL context or using a embedded processor.
+### What so special?
+
+By using the C processor driver library especially made for this IP Core, you'll be able to programmaticaly control each single pixel on the screen and plot basic geometric shapes including **lines, triangles, rectangles,** and **circles**. It won't use any floating point operations and the whole system is implemented using integers. It also lets the designer to print **ASCII character strings** over the screen using a monospace typeface. In addition, it provides a **terminal-like area** on the screen which reflows the text and can be useful for debugging and output monitoring. You can take a look at an actual output preview at [FPGADisplay-driver](https://github.com/zxcmehran/FPGADisplay-driver) repository.
+
+You can also use it on a bare FPGA without any embedded processors with a limited functionality. It uses a generated RAM block as **VGA Display Memory** to store the pixel data to be displayed over the screen. All you have to do is to fill memory blocks by either implementing a logic on FPGA context or using a embedded processor.
 
 ## Installing
 This repository contains **main IP Core files**. Clone it in a directory named `display_handler_v1_00_a` under `pcores` directory in your project root or in global user peripheral repository of your EDK installation.
@@ -13,9 +17,9 @@ This repository contains **main IP Core files**. Clone it in a directory named `
     $ cd pcores
     $ git clone https://github.com/zxcmehran/FPGADisplay-ipcore.git display_handler_v1_00_a
 
-After cloning, just add `display_handler` ‍‍‍‍IP core from IP Catalog, then connect PLB Bus connection, Clock reference, and external VGA DAC signals. Do not forget to edit project UCF file according to your hardware pins. Then you should assign an address range of 1M words long to `C_MEM0_BASEADDR` be able to access all memory blocks from application context.
+After cloning, just add `display_handler` ‍‍‍‍IP core from IP Catalog, then connect PLB Bus connection, Clock reference, and external VGA DAC signals. Do not forget to edit project UCF file according to your hardware pins. Then you should assign an address range of 1M words long to `C_MEM0_BASEADDR` to be able to access all memory blocks from application context.
 
-You can also customize display resolution on IP configuration menu. You can refer to [pixel timings table](http://static.ahadi.me/projects/fpga-display/pixeltimings.html) to set sync signals in the proper way. Accordingly, you should choose proper multiplier and divider parameters for main clock signal to produce required pixel clock frequency. As an example, choosing the multiplier as `display_clk_m = 8` and the divider as `display_clk_d = 2` produces a 25MHz clock signal from 100MHz main clock which is a suitable setup for `640x480@60Hz` mode. Please note that the default memory size is considered `1,024 * 1,024 = 1,048,576` blocks long and output resolution would be limited to `1024x1024` points. Practically, maximum standard display resolution will be `1024x768`. You can use bigger memories to achieve higher resolutions if you have enough resources.
+You can also customize display resolution on IP configuration menu. You can refer to [pixel timings table](http://static.ahadi.me/projects/fpga-display/pixeltimings.html) to set sync signals in the proper way. Accordingly, you should choose proper multiplier and divider parameters for your main clock signal to produce required pixel clock frequency. As an example, choosing the multiplier as `display_clk_m = 8` and the divider as `display_clk_d = 2` produces a 25MHz clock signal from a 100MHz main clock which is a suitable setup for `640x480@60Hz` mode. Please note that the default memory size is considered `1,024 * 1,024 = 1,048,576` blocks long and output resolution would be limited to `1024x1024` points. Practically, maximum standard display resolution will be `1024x768`. You can use bigger memories to achieve higher resolutions if you have enough resources.
 
 **Next Step:** You need IP Drivers to be able to use full programmatic functionality. Check [FPGADisplay-driver](https://github.com/zxcmehran/FPGADisplay-driver) repository for installation details.
 
